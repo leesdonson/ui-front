@@ -1,0 +1,42 @@
+.container {
+  padding: 0.5rem;
+  display: flex;
+  width: 50%;
+}
+.searchResults {
+  background-color: rgb(10, 10, 37);
+  border-radius: 10px;
+  width: 100%;
+}
+
+.results {
+  color: #dddde6c7;
+  font-size: 1rem;
+  font-family: tahoma;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.resImg {
+  border-radius: 0.3rem;
+}
+.results:hover {
+  background: rgba(62, 62, 124, 0.911);
+}
+
+.noresults {
+  color: #c9c8d8;
+  font-size: 1rem;
+  font-family: tahoma;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}

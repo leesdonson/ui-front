@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  transition: all 0.5s ease-in-out;
+}
+body {
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 0.692) 0%,
+    rgba(148, 188, 233, 0.63) 100%
+  );
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0.5rem;
+}
+
+.copyright {
+  color: #0b15a0;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: verdana;
+}

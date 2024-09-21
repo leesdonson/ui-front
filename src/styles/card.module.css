@@ -1,0 +1,86 @@
+.cards {
+  display: flex;
+  padding: 0.5rem;
+}
+
+.image_box {
+  width: 100%;
+  height: 200px;
+}
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.title {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: sans-serif;
+  color: #0a0909;
+}
+.price_category {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+}
+.price {
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0.3rem;
+  margin: 0.3rem 0;
+  border-radius: 5px;
+  font-family: sans-serif;
+  color: #d6cdcd;
+  width: 50%;
+  background-color: rgb(84, 85, 141);
+}
+
+.description {
+  font-size: 0.9rem;
+  font-weight: 400;
+  font-family: sans-serif;
+  color: #0a0909;
+}
+.rating {
+  font-size: 0.9rem;
+  font-weight: 400;
+  font-family: tahoma;
+  text-underline-offset: 0.2rem;
+  text-decoration: underline;
+  color: #181bee;
+  margin-top: 0.4rem;
+}
+.btn_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.action_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%;
+  font-weight: 400;
+  font-family: sans-serif;
+  color: #d6cdcd;
+  background-color: rgb(15, 16, 71);
+  border: none;
+  cursor: pointer;
+}

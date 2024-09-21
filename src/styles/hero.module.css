@@ -1,0 +1,113 @@
+.hero {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title {
+  background: linear-gradient(
+    90deg,
+    rgb(143, 140, 4) 0%,
+    rgb(9, 106, 216) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: tahoma;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+.title_main_type {
+  background: linear-gradient(
+    90deg,
+    rgb(189, 20, 133) 0%,
+    rgb(118, 188, 228) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: tahoma;
+  font-size: 2.5rem;
+  padding: 0.5rem 0;
+  font-weight: 600;
+  text-align: center;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid black;
+  transition: all 0.5s ease;
+  animation: typing 3.5s steps(21) 0.2s forwards, blinking 1s steps(1) infinite;
+}
+
+.description {
+  color: #524c4c;
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-size: 1.5rem;
+  padding: 0.5rem 0;
+  font-family: verdana;
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+  font-family: verdana;
+  outline: none;
+  cursor: pointer;
+}
+
+.title_main_notype {
+  background: linear-gradient(
+    90deg,
+    rgb(189, 20, 133) 0%,
+    rgb(118, 188, 228) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: tahoma;
+  font-size: 2.5rem;
+  padding: 0.5rem 0;
+  font-weight: 600;
+  text-align: center;
+}
+
+@keyframes typing {
+  to {
+    width: 30ch;
+  }
+}
+@keyframes blinking {
+  from {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
+  }
+
+  to {
+    border-color: transparent;
+  }
+}

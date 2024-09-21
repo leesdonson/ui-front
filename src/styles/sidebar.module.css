@@ -1,0 +1,117 @@
+.sidebar {
+  margin-top: 1rem;
+}
+
+.apply_filters {
+  font-size: 1.5rem;
+  font-family: verdana;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+}
+
+.search {
+  width: 100%;
+}
+.search_input {
+  width: 100%;
+  border: 1px solid rgb(66, 57, 57);
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-family: tahoma;
+  font-weight: 400;
+  background-color: transparent;
+  color: #000000;
+  outline: none;
+}
+.search_input:focus {
+  border: 1px solid blue;
+}
+
+.category {
+  margin-top: 0.3rem;
+}
+.radio {
+  margin-top: 0.5rem;
+  font-family: tahoma;
+  text-transform: capitalize;
+}
+.radio_box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0.5rem 0;
+  gap: 0.7rem;
+}
+.radio_input {
+  font-size: 1.5rem;
+  font-weight: 600;
+  accent-color: rgb(15, 235, 15);
+  padding: 0.5rem;
+}
+
+.price {
+  margin-top: 0.5rem;
+  width: 100%;
+}
+.price_input {
+  width: 100%;
+  margin-top: 0.3rem;
+  padding: 0.5rem;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.price_input:focus {
+  border: 1px solid blue;
+}
+
+.keywords {
+  margin-top: 0.5rem;
+}
+
+.label {
+  font-family: tahoma;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.buttons {
+  display: flex;
+  width: 100%;
+  gap: 0.4rem;
+  padding: 0.5rem 0;
+}
+
+.keywords_btn {
+  width: 100%;
+  padding: 0.5rem 0;
+  border: 1px solid gray;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: verdana;
+  font-size: 1rem;
+}
+
+.reset_filters {
+  margin-top: 0.6rem;
+  width: 100%;
+}
+
+.reset_btn {
+  padding: 0.5rem 0;
+  border: 1px solid gray;
+  border-radius: 5px;
+  outline: none;
+  background-color: rgb(24, 24, 92);
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: sans-serif;
+  width: 100%;
+  cursor: pointer;
+  color: #fff;
+}

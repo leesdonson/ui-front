@@ -1,0 +1,89 @@
+.shoppingCart {
+  width: 100%;
+  padding: 0.5rem;
+  max-width: 1200px;
+  margin: 6rem auto;
+  border-radius: 5px;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0.5rem 0;
+}
+.title {
+  font-size: 1.5rem;
+  font-family: tahoma;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  padding: 0.4rem 0;
+}
+.btn {
+  background-color: rgb(24, 24, 92);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: sans-serif;
+  width: 15rem;
+  outline: none;
+  padding: 0.3rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.table {
+  border: 1px solid rgb(66, 57, 57);
+  width: 100%;
+}
+.thead {
+  background-color: rgb(10, 10, 37);
+  color: #dddde6c7;
+}
+
+.th {
+  font-size: 1rem;
+  font-family: tahoma;
+  padding: 0.5rem;
+}
+
+.tbody {
+  background-color: rgba(233, 229, 238, 0.945);
+}
+.td {
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: verdana;
+  color: #000000;
+  padding: 0.3rem;
+}
+.tdCartQuantity {
+  text-align: center;
+}
+.tdprice {
+  text-align: end;
+}
+
+.checkout {
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 0.5rem 0;
+}
+
+.total {
+  font-size: 1.2rem;
+  font-family: tahoma;
+  font-weight: 500;
+  padding: 0.2rem 0;
+}
+.price {
+  font-size: 1.5rem;
+  font-family: tahoma;
+  font-weight: 600;
+  padding: 0.2rem 0;
+  color: rgb(24, 24, 92);
+}
+
+.btnContainer {
+  margin-top: 0.5rem;
+}
