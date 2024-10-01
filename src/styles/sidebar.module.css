@@ -54,6 +54,11 @@
   margin-top: 0.5rem;
   width: 100%;
 }
+.price_text {
+  font-size: 12px;
+  font-weight: 400;
+  font-family: verdana;
+}
 .price_input {
   width: 100%;
   margin-top: 0.3rem;
@@ -114,4 +119,29 @@
   width: 100%;
   cursor: pointer;
   color: #fff;
+}
+
+/* MEDIA QUERIES*/
+
+@media (max-width: 768px) {
+  .category {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.3rem;
+  }
+  .radio_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .radio {
+    display: flex;
+    /* background-color: blue; */
+  }
+  .radio_box {
+    display: flex;
+    gap: 0.5rem;
+    /* border: 1px solid rgb(92, 43, 43); */
+  }
 }

@@ -1,36 +1,38 @@
 import { useNavigate, useParams } from "react-router-dom";
 import styles from "../styles/productDetails.module.css";
-import { CartItemsProps, ProductsProps } from "../types/models";
+import { CartItemsProps } from "../types/models";
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../context/CartContext";
 import { toast } from "react-toastify";
+import Spinner from "./Spinner";
+// import { use } from "framer-motion/client";
 
 const ProductDetails = () => {
   const { id } = useParams();
   const { cart, setCart } = useContext(CartContext);
 
-  const [products, setProducts] = useState<any[]>([]);
+  const [product, setProduct] = useState<any>();
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
   if (!id) return null;
 
-  const productDetail = products?.find(
-    (item: ProductsProps) => item.id === parseInt(id)
-  );
-
   useEffect(() => {
     const getData = async () => {
-      let url = "https://dummyjson.com/products";
+      setLoading(true);
+      let url = `https://dummyjson.com/products/${id}`;
       const response = await fetch(url);
       const data = await response.json();
-      setProducts(data.products);
+
+      setProduct(data);
+      setLoading(false);
     };
 
     getData();
   }, [id]);
 
-  const exists = cart.find((x: CartItemsProps) => x.id === productDetail?.id);
+  const exists = cart.find((x: CartItemsProps) => x.id === product?.id);
   const handleAddToCart = (cartItems: CartItemsProps) => {
     const itemIndex = cart.findIndex(
       (item: CartItemsProps) => item.id === cartItems.id
@@ -78,6 +80,8 @@ const ProductDetails = () => {
     }
   };
 
+  if (loading) return <Spinner />;
+
   return (
     <section className={styles.detail_section}>
       <div className={styles.back_btn}>
@@ -94,108 +98,104 @@ const ProductDetails = () => {
           <div className={styles.main_img}>
             <img
               className={styles.img}
-              src={productDetail?.images[0]}
-              alt={productDetail?.title}
+              src={product?.images[0]}
+              alt={product?.title}
             />
           </div>
-          {productDetail?.images?.length > 1 && (
+          {product?.images?.length > 1 && (
             <div className={styles.imgbox_small}>
-              {productDetail?.images.map((img: string, i: number) => (
+              {product?.images.map((img: string, i: number) => (
                 <img
                   key={i}
                   className={styles.img_small}
                   src={img}
-                  alt={productDetail?.title}
+                  alt={product?.title}
                 />
               ))}
             </div>
           )}
         </div>
         <div className={styles.info_container}>
-          <h1 className={styles.title}>{productDetail?.title}</h1>
+          <h1 className={styles.title}>{product?.title}</h1>
           <div className={styles.detail_group}>
             <div className={styles.detail}>
               <p className={styles.info}>Brand: </p>
-              <span className={styles.value}>{productDetail?.brand}</span>
+              <span className={styles.value}>
+                {product?.brand ? product?.brand : "N/A"}
+              </span>
             </div>
             <div className={styles.detail}>
               <p className={styles.info}>Category: </p>
               <span className={styles.value}>
-                {productDetail?.category.toUpperCase()}
+                {product?.category.toUpperCase()}
               </span>
             </div>
             <div className={styles.detail}>
               <p className={styles.info}>MOQ: </p>
               <span className={styles.value}>
-                {productDetail?.minimumOrderQuantity}
+                {product?.minimumOrderQuantity}
               </span>
             </div>
             <div className={styles.detail}>
               <p className={styles.info}>Price: </p>
-              <span className={styles.value}>${productDetail?.price}</span>
+              <span className={styles.value}>${product?.price}</span>
             </div>
             <div className={styles.detail}>
               <p className={styles.info}>Availability: </p>
               <span className={styles.value}>
-                {productDetail?.availabilityStatus}
+                {product?.availabilityStatus}
               </span>
             </div>
             <div className={styles.detail}>
               <p className={styles.info}>Rating: </p>
-              <span className={styles.value}>{productDetail?.rating}</span>
+              <span className={styles.value}>{product?.rating}</span>
             </div>
             <div className={styles.detail}>
               <p className={styles.info}>Reviews: </p>
-              <span className={styles.value}>
-                {productDetail?.reviews.length}
-              </span>
+              <span className={styles.value}>{product?.reviews.length}</span>
             </div>
             <div className={styles.detail}>
               <p className={styles.info}>Stock: </p>
-              <span className={styles.value}>{productDetail?.stock}</span>
+              <span className={styles.value}>{product?.stock}</span>
             </div>
             <div className={styles.detail}>
               <p className={styles.info}>SKU: </p>
-              <span className={styles.value}>{productDetail?.sku}</span>
+              <span className={styles.value}>{product?.sku}</span>
             </div>
             <div className={styles.detail}>
               <p className={styles.info}>Return Policy: </p>
-              <span className={styles.value}>
-                {productDetail?.returnPolicy}
-              </span>
+              <span className={styles.value}>{product?.returnPolicy}</span>
             </div>
             <div className={styles.detail}>
               <p className={styles.info}>Shipping Info: </p>
               <span className={styles.value}>
-                {productDetail?.shippingInformation}
+                {product?.shippingInformation}
               </span>
             </div>
 
             <div className={styles.detail}>
               <p className={styles.info}>Warranty: </p>
               <span className={styles.value}>
-                {productDetail?.warrantyInformation}
+                {product?.warrantyInformation}
               </span>
             </div>
             <div className={` ${styles.description}`}>
               <p className={styles.infod}>Description: </p>
-              <span className={styles.valued}>
-                {productDetail?.description}
-              </span>
+              <span className={styles.valued}>{product?.description}</span>
             </div>
           </div>
           <div className={styles.addTocart}>
             {exists ? (
               <div className={styles.action_btn}>
                 <button
-                  onClick={() => handleRemoveFromCart(productDetail)}
+                  onClick={() => handleRemoveFromCart(product)}
                   className={styles.btn}
                 >
                   -
                 </button>
                 <span>{exists.cartQuantity}</span>
                 <button
-                  onClick={() => handleAddToCart(productDetail)}
+                  onClick={() => handleAddToCart(product)}
                   className={styles.btn}
                 >
                   +
@@ -203,7 +203,7 @@ const ProductDetails = () => {
               </div>
             ) : (
               <button
-                onClick={() => handleAddToCart(productDetail)}
+                onClick={() => handleAddToCart(product)}
                 className={styles.btn}
               >
                 Add to cart

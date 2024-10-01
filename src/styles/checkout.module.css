@@ -43,11 +43,29 @@
   border: 1px solid gray;
   border-radius: 5px;
   outline: none;
-  background-color: rgb(24, 24, 92);
+
   font-size: 1rem;
   font-weight: 400;
   font-family: sans-serif;
   padding: 0.5rem;
   cursor: pointer;
+  background-color: rgb(60, 60, 133);
   color: #fff;
+}
+.btn.payNow {
+  background-color: rgb(5, 95, 17);
+}
+
+/*MEDIA QUERIES*/
+
+@media (max-width: 1024px) {
+  .content {
+    width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    width: 90%;
+  }
 }

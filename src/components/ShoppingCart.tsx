@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import styles from "../styles/shoppingCart.module.css";
 import { CartItemsProps } from "../types/models";
+import { GiShoppingCart } from "react-icons/gi";
+import { LiaTimesSolid } from "react-icons/lia";
 
 const ShoppingCart = () => {
   const navigate = useNavigate();
@@ -68,7 +70,7 @@ const ShoppingCart = () => {
               <div className={styles.btnContainer}>
                 <button
                   onClick={() => navigate("/checkout")}
-                  className={styles.btn}
+                  className={styles.checkout_btn}
                   type="button"
                 >
                   Proceed to Checkout
@@ -78,7 +80,11 @@ const ShoppingCart = () => {
           </div>
         ) : (
           <div className={styles.noItemsContainer}>
-            <p className={styles.noItems}>No items in cart</p>
+            <div className={styles.noItemsIcons}>
+              <LiaTimesSolid className={styles.noItemsIconX} />
+              <GiShoppingCart size={40} className={styles.noItemsIcon} />
+            </div>
+            <p className={styles.noItems}>No items in the cart</p>
           </div>
         )}
       </div>

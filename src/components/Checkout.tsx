@@ -12,7 +12,7 @@ const Checkout = () => {
         </p>
         <div className={styles.confirm_btns}>
           <button
-            className={styles.btn}
+            className={`${styles.btn} ${styles.payNow}`}
             onClick={() => navigate("/checkout/success")}
             type="button"
           >

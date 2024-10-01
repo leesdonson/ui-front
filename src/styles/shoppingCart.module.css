@@ -11,6 +11,8 @@
   justify-content: center;
   gap: 1.5rem;
   padding: 0.5rem 0;
+  position: relative;
+  width: 100%;
 }
 .title {
   font-size: 1.5rem;
@@ -20,16 +22,20 @@
   padding: 0.4rem 0;
 }
 .btn {
-  background-color: rgb(24, 24, 92);
+  background-color: rgb(60, 60, 133);
   color: #fff;
   font-size: 1rem;
   font-weight: 400;
   font-family: sans-serif;
   width: 15rem;
   outline: none;
-  padding: 0.3rem;
+  border: none;
+  padding: 0.5rem;
   cursor: pointer;
   border-radius: 5px;
+  position: absolute;
+  top: 15px;
+  left: 0px;
 }
 
 .table {
@@ -86,4 +92,68 @@
 
 .btnContainer {
   margin-top: 0.5rem;
+}
+.checkout_btn {
+  background-color: rgba(8, 82, 13, 0.815);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: sans-serif;
+  width: 15rem;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.noItemsContainer {
+  border: 1px solid rgb(66, 57, 57);
+  border-radius: 5px;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  text-align: center;
+  justify-content: center;
+}
+
+.noItemsIcons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 40px;
+}
+.noItemsIconX {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  color: red;
+  font-size: 3.5rem;
+}
+.noItems {
+  font-size: 1.2rem;
+  transform: translateY(10px);
+  font-family: tahoma;
+  font-weight: 600;
+  padding: 0.2rem 0;
+  color: rgb(24, 24, 92);
+}
+
+/*MEDIA QUERIES*/
+
+@media (max-width: 768px) {
+  .shoppingCart {
+    margin: 5rem auto;
+  }
+  .header {
+    justify-content: end;
+  }
+  .title {
+    /* font-size: 1.3rem; */
+    margin-right: 0.5rem;
+  }
+  .btn {
+    width: 10rem;
+  }
 }

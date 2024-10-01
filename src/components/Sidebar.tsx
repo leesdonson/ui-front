@@ -28,7 +28,7 @@ const Sidebar = () => {
     "Apple",
     "Samsung",
     "Watch",
-    "Laptops",
+    "Laptop",
   ]);
 
   useEffect(() => {
@@ -78,27 +78,30 @@ const Sidebar = () => {
         <label className={styles.label} htmlFor="category">
           Category
         </label>
-        {categories.map((category) => (
-          <label className={styles.radio} key={category}>
-            <div className={styles.radio_box}>
-              <input
-                className={styles.radio_input}
-                type="radio"
-                name="category"
-                checked={selectedCategory === category}
-                value={category}
-                onChange={(e) => setSelectedCategory(e.target.value)}
-              />
+        <div className={styles.radio_container}>
+          {categories.map((category) => (
+            <label className={styles.radio} key={category}>
+              <div className={styles.radio_box}>
+                <input
+                  className={styles.radio_input}
+                  type="radio"
+                  name="category"
+                  checked={selectedCategory === category}
+                  value={category}
+                  onChange={(e) => setSelectedCategory(e.target.value)}
+                />
 
-              <span>{category}</span>
-            </div>
-          </label>
-        ))}
+                <span>{category}</span>
+              </div>
+            </label>
+          ))}
+        </div>
       </div>
       <div className={styles.price}>
         <label className={styles.label} htmlFor="price">
           Price
         </label>
+        <p className={styles.price_text}>Set the min and max price.</p>
         <input
           className={styles.price_input}
           value={minPrice}

@@ -27,7 +27,7 @@ const Hero = () => {
           className={styles.btn}
           type="button"
         >
-          Get Started
+          Go Shopping
         </button>
         <button
           onClick={() => navigate("/about")}
