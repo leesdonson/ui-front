@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="footer">
       <p className="copyright">
         &copy; {year} UI-Front | Developed By:
-        <Link target="_blank" to="https://krintifa.com">
+        <Link target="_blank" to="https://krintifalab.com">
           Krintifa Lab
         </Link>
       </p>

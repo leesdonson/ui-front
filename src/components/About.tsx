@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "../styles/about.module.css";
 import { FaFacebook, FaGithub, FaInstagram } from "react-icons/fa";
 
 const About = () => {
+  const navigate = useNavigate();
   return (
     <div className={styles.about}>
       <div className={styles.container}>
@@ -45,7 +46,7 @@ const About = () => {
         </p>
         <div className={styles.btn_box}>
           <button
-            onClick={() => (window.location.href = "/products")}
+            onClick={() => navigate("/products")}
             className={styles.btn}
             type="button"
           >
